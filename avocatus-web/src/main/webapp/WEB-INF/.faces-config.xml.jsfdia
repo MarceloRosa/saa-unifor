@@ -22,11 +22,13 @@
   PATH="/pages/login/login.xhtml" SHAPE="32,785,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#pages#login#login.xhtml:0" NAME="item"
    PATH="/pages/login/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="home::#pages#usuario#dashboardUsuario.xhtml"
-    NAME="output" PATH="/pages/usuario/dashboardUsuario.xhtml"
-    TARGET="rules:#pages#usuario#dashboardUsuario.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="homeFuncionario::#pages#home#dashboardAtendente.xhtml"
+    NAME="output" PATH="/pages/home/dashboardAtendente.xhtml"
+    TARGET="rules:#pages#home#dashboardAtendente.xhtml"
+    TITLE="homeFuncionario" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#usuario#dashboardUsuario.xhtml"
-  PATH="/pages/usuario/dashboardUsuario.xhtml" SHAPE="240,801,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#home#dashboardAtendente.xhtml"
+  PATH="/pages/home/dashboardAtendente.xhtml" SHAPE="240,913,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

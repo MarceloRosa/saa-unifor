@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <acesso>
-	<url></url>
+	<url>/pages/home/dashboardAtendente.xhtml</url>
 	<papeis>
 		<papel>
-			<nome></nome>
+			<nome>ATENDENTE</nome>
 		</papel>
 	</papeis>
 </acesso>

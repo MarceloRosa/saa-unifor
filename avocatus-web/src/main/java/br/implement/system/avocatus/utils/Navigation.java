@@ -12,6 +12,8 @@ public class Navigation {
 	public static final String CADASTRO = "cadastro";
 	public static final String EXCLUIR = "excluir";
 	public static final String SAIR = "sair";
+	
+	public static final String HOME_FUNCIONARIO = "homeFuncionario";
 
 
 

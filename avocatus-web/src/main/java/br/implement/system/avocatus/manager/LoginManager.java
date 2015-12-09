@@ -9,6 +9,8 @@ import javax.faces.bean.ViewScoped;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import br.implement.system.avocatus.utils.Navigation;
+
 /**
  * @author adrianopatrick@gmail.com
  * @since 4 de dez de 2015
@@ -20,6 +22,6 @@ import org.springframework.stereotype.Component;
 public class LoginManager {
 
 	public String loggar(){
-		return "home";
+		return Navigation.HOME_FUNCIONARIO;
 	}
 }
