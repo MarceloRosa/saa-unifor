@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template_login.xhtml">
+
+	<ui:define name="metatag">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</ui:define>
+	<ui:define name="content">
+		<div id="wrapper">
+
+			<h:form id="login-form" class="login-form">
+
+				<div class="header">
+					<h1>Avocatus</h1>
+					<span>Bem-vindo ao Avocatus, faça login para ter acesso as
+						principais funcionalidades do sistema.</span>
+				</div>
+
+				<div class="content">
+					<p:inputText id="username" class="input username"
+						placeholder="Email: exemplo@avocatus.com" />
+					<div class="user-icon" />
+					<p:inputText id="password" class="input password"
+						placeholder="Senha" />
+					<div class="pass-icon" />
+				</div>
+
+				<div class="footer">
+					<h:commandButton id="login" value="Login" class="button" action="#{loginManager.loggar()}" />
+					<h:commandButton id="register" value="Registre-se" class="register" />
+				</div>
+
+			</h:form>
+		</div>
+		<div class="gradient"></div>
+	</ui:define>
+</ui:composition>
