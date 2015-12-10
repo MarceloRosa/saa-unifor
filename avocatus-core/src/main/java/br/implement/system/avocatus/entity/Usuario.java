@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+
 /**
  * @author adrianopatrick@gmail.com
  * @since 1 de dez de 2015
@@ -30,6 +32,7 @@ public class Usuario {
 	private Long id;
 
 	@Column(unique = true, nullable = false)
+	@Email(message="email informado está fora do padrão")
 	private String email;
 
 	@Column(nullable = false)

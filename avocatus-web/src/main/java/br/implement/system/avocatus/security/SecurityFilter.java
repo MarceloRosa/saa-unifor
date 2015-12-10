@@ -4,6 +4,8 @@
 package br.implement.system.avocatus.security;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import br.implement.system.avocatus.entity.Papel;
 import br.implement.system.avocatus.entity.Usuario;
 import br.implement.system.avocatus.to.SegurancaTO;
 
@@ -77,13 +80,55 @@ public class SecurityFilter implements Filter {
 		}
 	}
 	
-	private boolean possuiPermissao(String url, Usuario usuario){
-//		if(usuario instanceof Doadores){
-//			return url.contains("/doador") || url.contains("/usuario");
-//		} else if (usuario instanceof Instituicoes) {
-//			return url.contains("/instituicao") || url.contains("/usuario");
-//		}
+	private synchronized boolean possuiPermissao(String url, Usuario user) {
+		
+		NavigationSecurity navigationSecurity = (NavigationSecurity) WebApplicationContextUtils
+				.getWebApplicationContext(filterConfig.getServletContext())
+				.getBean("navigationSecurity");
+		
+		List<String> papeisDeAcesso = new ArrayList<>();
+		List<String> papeisDoUsuario = new ArrayList<>();
+		
+		for (Recurso recurso : navigationSecurity.getAcesso().getRecursos()) {
+			if(recurso.getUrl().equals(url)){
+				
+				populaPapeisDoUsuario(user, papeisDoUsuario);
+				
+				populaPapeisDeAcessoDaUrl(papeisDeAcesso, recurso);
+				
+				papeisDeAcesso.retainAll(papeisDoUsuario);
+				if(papeisDeAcesso.size() > 0){
+					return true;
+				} 
+				
+				break;
+			}
+		}
 		return false;
+	}
+
+
+	/**
+	 * @param papeisDeAcesso
+	 * @param acesso
+	 */
+	private synchronized void populaPapeisDeAcessoDaUrl(List<String> papeisDeAcesso,
+			Recurso recurso) {
+		for (PapelDeAcesso papelDeAcesso : recurso.getPapeis()) {
+			papeisDeAcesso.add(papelDeAcesso.getNome());
+		}
+	}
+
+
+	/**
+	 * @param user
+	 * @param papeisDoUsuario
+	 */
+	private synchronized void populaPapeisDoUsuario(Usuario user,
+			List<String> papeisDoUsuario) {
+		for (Papel papel : user.getPapeis()) {
+			papeisDoUsuario.add(papel.getNome());
+		}
 	}
 
 	private boolean isExcludeURL(String url) {

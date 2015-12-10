@@ -5,9 +5,9 @@ package br.implement.system.avocatus.manager;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import br.implement.system.avocatus.utils.Navigation;
 
@@ -17,7 +17,7 @@ import br.implement.system.avocatus.utils.Navigation;
  */
 @ViewScoped
 @Scope("session")
-@Component(value = "loginManager")
+@Named(value = "loginManager")
 @ManagedBean(name = "loginManager")
 public class LoginManager {
 

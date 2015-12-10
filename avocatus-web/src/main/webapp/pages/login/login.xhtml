@@ -22,16 +22,16 @@
 
 				<div class="content">
 					<p:inputText id="username" class="input username"
-						placeholder="Email: exemplo@avocatus.com" />
+						placeholder="#{messages['login.email']}: exemplo@avocatus.com" />
 					<div class="user-icon" />
 					<p:inputText id="password" class="input password"
-						placeholder="Senha" />
+						placeholder="#{messages['login.pwd']}" />
 					<div class="pass-icon" />
 				</div>
 
 				<div class="footer">
-					<h:commandButton id="login" value="Login" class="button" action="#{loginManager.loggar()}" />
-					<h:commandButton id="register" value="Registre-se" class="register" />
+					<h:commandButton id="login" value="#{messages['login.bt_entrar']}" class="button" action="#{loginManager.loggar()}" />
+					<h:commandButton id="register" value="#{messages['login.lk_register']}" class="register" />
 				</div>
 
 			</h:form>

@@ -5,9 +5,9 @@ package br.implement.system.avocatus.manager;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 /**
  * @author adrianopatrick@gmail.com
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @ViewScoped
 @Scope("session")
-@Component(value = "menuManager")
+@Named(value = "menuManager")
 @ManagedBean(name = "menuManager")
 public class MenuManager {
 
