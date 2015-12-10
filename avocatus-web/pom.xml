@@ -8,7 +8,7 @@
 
 	<parent>
 		<groupId>br.implement.system.avocatus</groupId>
-		<artifactId>avocatus-core</artifactId>
+		<artifactId>avocatus-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 

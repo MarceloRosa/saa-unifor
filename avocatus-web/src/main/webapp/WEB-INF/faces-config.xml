@@ -30,9 +30,14 @@
 			<to-view-id>/pages/login/login.jsf</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
 	<!-- Menu Final Converters -->
 	<application>
 		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+		<locale-config>
+			<supported-locale>pt_BR</supported-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
 		<resource-bundle>
 			<base-name>messages</base-name>
 			<var>messages</var>
