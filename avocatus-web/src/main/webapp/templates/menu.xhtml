@@ -10,23 +10,23 @@
 	<div id="menu" class="menu">
 	<h:form id="menuForm">
 		<p:tabMenu activeIndex="#{menuManager.option}">
-			<p:menuitem value="Atendimento" action="#{menuManager.actionMenu(0)}"
+			<p:menuitem value="#{messages['menu.atendimento']}" action="#{menuManager.actionMenu(0)}"
 				icon="ui-icon-star">
 				<f:param name="option" value="0" />
 			</p:menuitem>
-			<p:menuitem value="Acompanhamento" action="#{menuManager.actionMenu(1)}"
+			<p:menuitem value="#{messages['menu.acompanhamento']}" action="#{menuManager.actionMenu(1)}"
 				icon="ui-icon-search">
 				<f:param name="option" value="1" />
 			</p:menuitem>
-			<p:menuitem value="Agenda de Audiências" action="#{menuManager.actionMenu(2)}"
+			<p:menuitem value="#{messages['menu.agenda']}" action="#{menuManager.actionMenu(2)}"
 				icon="ui-icon-document">
 				<f:param name="option" value="2" />
 			</p:menuitem>
-			<p:menuitem value="Funcionários" action="#{menuManager.actionMenu(3)}"
+			<p:menuitem value="#{messages['menu.funcionario']}" action="#{menuManager.actionMenu(3)}"
 				icon="ui-icon-wrench">
 				<f:param name="option" value="3" />
 			</p:menuitem>
-			<p:menuitem value="Sair" icon="ui-icon-close">
+			<p:menuitem value="#{messages['menu.sair']}" icon="ui-icon-close">
 				<f:param name="option" value="4" />
 			</p:menuitem>
 		</p:tabMenu>

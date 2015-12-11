@@ -82,6 +82,12 @@ public class SecurityFilter implements Filter {
 	
 	private synchronized boolean possuiPermissao(String url, Usuario user) {
 		
+		for (Papel papel : user.getPapeis()) {
+			if (papel.getNome().equals("ADMINISTRADOR")) {
+				return true;
+			}
+		}
+		
 		NavigationSecurity navigationSecurity = (NavigationSecurity) WebApplicationContextUtils
 				.getWebApplicationContext(filterConfig.getServletContext())
 				.getBean("navigationSecurity");

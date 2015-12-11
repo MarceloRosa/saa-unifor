@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 	<name>avocatus-core</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<parent>
 		<groupId>br.implement.system.avocatus</groupId>
 		<artifactId>avocatus-parent</artifactId>
@@ -17,6 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jetty.version>6.1.4</jetty.version>
 		<spring.version>4.2.3.RELEASE</spring.version>
+		<inject.version>1</inject.version>
 		<aspectj.version>1.8.5</aspectj.version>
 		<slf4j.version>1.5.10</slf4j.version>
 		<java.version>1.5</java.version>
@@ -33,7 +34,6 @@
 
 	<dependencies>
 		<!-- Bean Validation Dependencies -->
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -60,6 +60,12 @@
 		</dependency>
 
 		<!-- Spring Dependencies -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>${inject.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -131,7 +137,7 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>${cglib.version}</version>
 		</dependency>
-		
+
 		<!-- logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -175,7 +181,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>

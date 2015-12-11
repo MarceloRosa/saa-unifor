@@ -61,7 +61,7 @@ public class SecurityConfig {
 
 		// Se o usuario por Administrador, libera todos os acessos
 		for (Papel papel : usuario.getPapeis()) {
-			if (papel.getNome().equals("Administrador")) {
+			if (papel.getNome().equals("ADMINISTRADOR")) {
 				return;
 			}
 		}
