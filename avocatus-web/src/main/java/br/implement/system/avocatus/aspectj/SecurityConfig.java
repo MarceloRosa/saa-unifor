@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import br.implement.system.avocatus.entity.Papel;
 import br.implement.system.avocatus.entity.Permissao;
 import br.implement.system.avocatus.entity.Usuario;
+import br.implement.system.avocatus.entity.enums.TipoPapel;
 import br.implement.system.avocatus.to.SegurancaTO;
 
 /**
@@ -61,7 +62,7 @@ public class SecurityConfig {
 
 		// Se o usuario por Administrador, libera todos os acessos
 		for (Papel papel : usuario.getPapeis()) {
-			if (papel.getNome().equals("ADMINISTRADOR")) {
+			if (TipoPapel.ADMINISTRADOR.equals(papel.getTipoPapel())) {
 				return;
 			}
 		}

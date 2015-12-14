@@ -3,6 +3,8 @@
  */
 package br.implement.system.avocatus.security;
 
+import br.implement.system.avocatus.entity.enums.TipoPapel;
+
 /**
  * @author adrianopatrick@gmail.com
  * @since 10 de dez de 2015
@@ -17,6 +19,10 @@ public class PapelDeAcesso {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public TipoPapel getTipoPapel(){
+		return TipoPapel.buscarPorDescricao(this.getNome());
 	}
 	
 }

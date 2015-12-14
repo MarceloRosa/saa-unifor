@@ -19,6 +19,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 
+import br.implement.system.avocatus.entity.enums.TipoPapel;
+
 /**
  * @author adrianopatrick@gmail.com
  * @since 1 de dez de 2015
@@ -52,6 +54,19 @@ public class Usuario {
 	
 	@OneToOne(mappedBy="usuario")
 	private Pessoa pessoa;
+	
+	/**
+	 * Entendendo que o enum foi criado em ordem de visibilidade
+	 * */
+	public TipoPapel maxPapel(){
+		int maior = 0;
+		for (Papel papel : papeis) {
+			if(papel.getTipoPapel().ordinal() > maior){
+				maior = papel.getTipoPapel().ordinal();
+			}
+		}
+		return TipoPapel.buscarPorOrdinal(maior);
+	}
 
 	public Long getId() {
 		return id;

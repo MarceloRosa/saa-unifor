@@ -6,8 +6,9 @@ package br.implement.system.avocatus.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import br.implement.system.avocatus.entity.enums.TipoPapel;
 
 /**
  * @author adrianopatrick@gmail.com
@@ -31,8 +34,8 @@ public class Papel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(nullable = false, unique = true)
-	private String nome;
+	@Enumerated(EnumType.ORDINAL)
+	private TipoPapel tipoPapel;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "configuracoes", 
@@ -55,19 +58,12 @@ public class Papel implements Serializable {
 		this.id = id;
 	}
 
-	/**
-	 * @return the nome
-	 */
-	public String getNome() {
-		return nome;
+	public TipoPapel getTipoPapel() {
+		return tipoPapel;
 	}
 
-	/**
-	 * @param nome
-	 *            the nome to set
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTipoPapel(TipoPapel tipoPapel) {
+		this.tipoPapel = tipoPapel;
 	}
 
 	/**
@@ -84,17 +80,11 @@ public class Papel implements Serializable {
 		this.permissoes = permissoes;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -112,17 +102,13 @@ public class Papel implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Papeis [nome=" + nome + "]";
+		return "Papel [id=" + id + ", tipoUsuario=" + tipoPapel
+				+ ", permissoes=" + permissoes + "]";
 	}
 	
 }

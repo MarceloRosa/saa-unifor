@@ -21,6 +21,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import br.implement.system.avocatus.entity.Papel;
 import br.implement.system.avocatus.entity.Usuario;
+import br.implement.system.avocatus.entity.enums.TipoPapel;
 import br.implement.system.avocatus.to.SegurancaTO;
 
 /**
@@ -83,7 +84,7 @@ public class SecurityFilter implements Filter {
 	private synchronized boolean possuiPermissao(String url, Usuario user) {
 		
 		for (Papel papel : user.getPapeis()) {
-			if (papel.getNome().equals("ADMINISTRADOR")) {
+			if (TipoPapel.ADMINISTRADOR.equals(papel.getTipoPapel())) {
 				return true;
 			}
 		}
@@ -92,8 +93,8 @@ public class SecurityFilter implements Filter {
 				.getWebApplicationContext(filterConfig.getServletContext())
 				.getBean("navigationSecurity");
 		
-		List<String> papeisDeAcesso = new ArrayList<>();
-		List<String> papeisDoUsuario = new ArrayList<>();
+		List<TipoPapel> papeisDeAcesso = new ArrayList<>();
+		List<TipoPapel> papeisDoUsuario = new ArrayList<>();
 		
 		for (Recurso recurso : navigationSecurity.getAcesso().getRecursos()) {
 			if(recurso.getUrl().equals(url)){
@@ -118,10 +119,10 @@ public class SecurityFilter implements Filter {
 	 * @param papeisDeAcesso
 	 * @param acesso
 	 */
-	private synchronized void populaPapeisDeAcessoDaUrl(List<String> papeisDeAcesso,
+	private synchronized void populaPapeisDeAcessoDaUrl(List<TipoPapel> papeisDeAcesso,
 			Recurso recurso) {
 		for (PapelDeAcesso papelDeAcesso : recurso.getPapeis()) {
-			papeisDeAcesso.add(papelDeAcesso.getNome());
+			papeisDeAcesso.add(papelDeAcesso.getTipoPapel());
 		}
 	}
 
@@ -131,9 +132,9 @@ public class SecurityFilter implements Filter {
 	 * @param papeisDoUsuario
 	 */
 	private synchronized void populaPapeisDoUsuario(Usuario user,
-			List<String> papeisDoUsuario) {
+			List<TipoPapel> papeisDoUsuario) {
 		for (Papel papel : user.getPapeis()) {
-			papeisDoUsuario.add(papel.getNome());
+			papeisDoUsuario.add(papel.getTipoPapel());
 		}
 	}
 

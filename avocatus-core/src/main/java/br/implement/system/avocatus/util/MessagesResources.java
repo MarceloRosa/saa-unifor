@@ -16,10 +16,11 @@ import java.util.Properties;
 public class MessagesResources {
 	
 	private static FileInputStream file = null;
+	private static Locale locale;
 	
 	private static Properties getProp() throws IOException {
 		Properties properties = new Properties();
-		Locale locale = Locale.getDefault();
+		
 		
 		if(locale.equals(Locale.US)){
 			file = new FileInputStream(new File("resources/messages_en_US.properties"));
@@ -32,6 +33,10 @@ public class MessagesResources {
 	
 	public static String getMessages(String key) throws IOException{
 		return getProp().getProperty(key);
+	}
+
+	public static void setLocale(Locale locale) {
+		MessagesResources.locale = locale;
 	}
 	
 }
