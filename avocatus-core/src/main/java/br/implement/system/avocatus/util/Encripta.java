@@ -30,4 +30,7 @@ public class Encripta {
 		}
 	}
 
+	public static void main(String[] args) {
+		System.out.println(Encripta.encripta("123"));
+	}
 }

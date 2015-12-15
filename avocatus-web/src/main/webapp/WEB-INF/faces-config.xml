@@ -39,6 +39,10 @@
 			<from-outcome>funcionarios</from-outcome>
 			<to-view-id>/pages/login/login.jsf</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/login/login.jsf</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	<!-- Menu Final Converters -->

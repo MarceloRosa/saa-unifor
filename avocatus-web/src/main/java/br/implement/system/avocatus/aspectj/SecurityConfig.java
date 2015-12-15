@@ -74,7 +74,7 @@ public class SecurityConfig {
 								.getAnnotation(RolesAllowed.class);
 
 		if (permissoesDoMetodo != null) {
-			final List<String> permissoesRequeridas = new ArrayList<String>(
+			final List<String> permissoesRequeridas = new ArrayList<>(
 					Arrays.asList(permissoesDoMetodo.value()));
 			
 			final List<String> permissoesDoUsuario = this

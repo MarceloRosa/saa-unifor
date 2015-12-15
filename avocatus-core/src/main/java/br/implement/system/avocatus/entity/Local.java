@@ -1,38 +1,32 @@
-/**
- * 
- */
 package br.implement.system.avocatus.entity;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
  * @author adrianopatrick@gmail.com
- * @since 7 de dez de 2015
+ * @since 15 de dez de 2015
  */
 @Entity
-@Table(name = "pessoas")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Pessoa {
-
+@Table(name="locais")
+public class Local {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-
-	@PrimaryKeyJoinColumn
-	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
-	private Usuario usuario;
+	
+	@Column(nullable=false)
+	private String descricao;
+	
+	@ManyToOne
+	@JoinColumn(name="tipo_local_id")
+	private TipoLocal tipoLocal;
 	
 	@ManyToOne
 	@JoinColumn(name="endereco_id")
@@ -46,14 +40,33 @@ public class Pessoa {
 		this.id = id;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
+	public TipoLocal getTipoLocal() {
+		return tipoLocal;
+	}
+
+	public void setTipoLocal(TipoLocal tipoLocal) {
+		this.tipoLocal = tipoLocal;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -62,6 +75,9 @@ public class Pessoa {
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -70,7 +86,7 @@ public class Pessoa {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pessoa other = (Pessoa) obj;
+		Local other = (Local) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -78,5 +94,5 @@ public class Pessoa {
 			return false;
 		return true;
 	}
-	
+
 }

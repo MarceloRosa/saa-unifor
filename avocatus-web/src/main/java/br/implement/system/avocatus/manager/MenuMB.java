@@ -5,21 +5,28 @@ package br.implement.system.avocatus.manager;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.security.auth.login.LoginException;
 
 import org.springframework.context.annotation.Scope;
+
+import br.implement.system.avocatus.to.SegurancaTO;
+import br.implement.system.avocatus.utils.Navigation;
 
 /**
  * @author adrianopatrick@gmail.com
  * @since 2 de dez de 2015
  */
+@Named
+@ManagedBean
 @RequestScoped
 @Scope("session")
-@Named(value = "menuManager")
-@ManagedBean(name = "menuManager")
 public class MenuMB {
 
 	private Integer option;
+	@Inject
+	private SegurancaTO segurancaTO;
 
 	public String actionMenu(int option) {
 		this.option = option;
@@ -38,6 +45,14 @@ public class MenuMB {
 		case 3:
 			retorno = "funcionarios";
 			break;
+		case 4:
+			try {
+				segurancaTO.logout();
+			} catch (LoginException e) {
+				// TODO criar página geral de erro
+				e.printStackTrace();
+			}
+			return Navigation.SAIR;
 		}
 		
 		return retorno;

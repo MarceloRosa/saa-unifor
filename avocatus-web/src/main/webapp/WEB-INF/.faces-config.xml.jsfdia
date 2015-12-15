@@ -14,6 +14,9 @@
    <PROCESS-ITEM-OUTPUT ID="funcionarios::#pages#login#login.jsf"
     NAME="output3" PATH="/pages/login/login.jsf"
     TARGET="rules:#pages#login#login.jsf" TITLE="funcionarios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="sair::#pages#login#login.jsf" NAME="output4"
+    PATH="/pages/login/login.jsf" TARGET="rules:#pages#login#login.jsf"
+    TITLE="sair" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#login#login.jsf"
@@ -27,6 +30,14 @@
     NAME="output" PATH="/pages/home/dashboardAtendente.xhtml"
     TARGET="rules:#pages#home#dashboardAtendente.xhtml"
     TITLE="homeAtendente" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="homeAdministrador::#pages#home#dashboardAtendente.xhtml"
+    NAME="output1" PATH="/pages/home/dashboardAtendente.xhtml"
+    TARGET="rules:#pages#home#dashboardAtendente.xhtml"
+    TITLE="homeAdministrador" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="fracasso::#pages#login#login.xhtml"
+    NAME="output2" PATH="/pages/login/login.xhtml"
+    TARGET="rules:#pages#login#login.xhtml" TITLE="fracasso" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#pages#home#dashboardAtendente.xhtml"
