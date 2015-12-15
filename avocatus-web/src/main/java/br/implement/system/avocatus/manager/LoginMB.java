@@ -83,7 +83,6 @@ public class LoginMB {
 		} else {
 			return null;
 		}
-			
 	}
 
 	public String getEmail() {
