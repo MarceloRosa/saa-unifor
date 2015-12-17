@@ -33,6 +33,7 @@
 	</properties>
 
 	<dependencies>
+
 		<!-- Bean Validation Dependencies -->
 		<dependency>
 			<groupId>org.hibernate</groupId>

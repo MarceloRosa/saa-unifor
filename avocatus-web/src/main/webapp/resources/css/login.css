@@ -264,8 +264,8 @@ FOOTER
 /* Register button */
 .login-form .footer .register {
 	display: block;
-	float: right;
-	padding: 10px;
+	float: left;
+	padding: 10px 5px;
 	margin-right: 20px;
 	
 	background: none;
