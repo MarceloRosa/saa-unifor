@@ -40,6 +40,10 @@ public class Atendimento {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data_hora_atendimento", nullable = false)
 	private Date dataHoraAtendimento;
+	
+	@ManyToOne
+	@JoinColumn(name="processo_id")
+	private Processo processo;
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -83,6 +87,14 @@ public class Atendimento {
 
 	public void setDataHoraAtendimento(Date dataHoraAtendimento) {
 		this.dataHoraAtendimento = dataHoraAtendimento;
+	}
+
+	public Processo getProcesso() {
+		return processo;
+	}
+
+	public void setProcesso(Processo processo) {
+		this.processo = processo;
 	}
 
 	public Date getCreated() {
