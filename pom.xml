@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>1.0.0</modelVersion>
 
-	<groupId>br.implement.system.avocatus</groupId>
-	<artifactId>avocatus-parent</artifactId>
+	<groupId>br.unifor.saa</groupId>
+	<artifactId>saa-parent</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
-	<name>Avocatus</name>
+	<name>Saa</name>
 
 	<modules>
-		<module>avocatus-core</module>
-		<module>avocatus-web</module>
+		<module>saa-core</module>
+		<module>saa-web</module>
 	</modules>
 </project>
