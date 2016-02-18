@@ -36,20 +36,21 @@ body {
 
 #wrapper {
 	/* Center wrapper perfectly */
-	width: 300px;
-	height: 300px;
-	margin: 200px auto;
+	width: 100%;
+	height: 50%;
+	top: 20%;
+	position: absolute;
 }
 
 .gradient {
 	/* Center Positioning */
 	width: 600px;
 	height: 600px;
-	position: relative;
+	position: absolute;
 	left: 50%;
-	top: 30%;
+	top: 40%;
 	margin-left: -300px;
-	margin-top: -550px;
+	margin-top: -250px;
 	z-index: -2;
 	
 	/* Fallback */ 
@@ -108,10 +109,10 @@ HEADER
 }
 
 .footer-text{
-	position: relative;
-	left: 52%;
-	top: 30%;
-	margin-left: -300px;
+	position: fixed;
+	left: 35%;
+	right: 30%;
+	top: 90%;
 	font-size: 11px;
 	line-height: 16px;
 	color: #678889;
