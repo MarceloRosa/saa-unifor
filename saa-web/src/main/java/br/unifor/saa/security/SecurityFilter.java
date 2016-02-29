@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import br.unifor.saa.entity.Papel;
@@ -28,6 +29,7 @@ import br.unifor.saa.to.SegurancaTO;
  * @author adrianopatrick@gmail.com
  * @since 5 de nov de 2015
  */
+@Component
 public class SecurityFilter implements Filter {
 
 	private FilterConfig filterConfig;

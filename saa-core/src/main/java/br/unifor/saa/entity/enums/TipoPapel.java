@@ -8,7 +8,7 @@ package br.unifor.saa.entity.enums;
  * @since 14 de dez de 2015
  */
 public enum TipoPapel {
-
+	
 	ALUNO("Aluno"), PROFESSOR("Professor"), ADMINISTRADOR("Administrador");
 	
 	private TipoPapel(String descricao) {

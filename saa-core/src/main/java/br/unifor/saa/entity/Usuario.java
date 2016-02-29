@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
@@ -51,9 +50,6 @@ public class Usuario {
 		joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id") , 
 		inverseJoinColumns = @JoinColumn(name = "papel_id", referencedColumnName = "id") )
 	private List<Papel> papeis;
-	
-	@OneToOne(mappedBy="usuario")
-	private Pessoa pessoa;
 	
 	/**
 	 * Entendendo que o enum foi criado em ordem de visibilidade
@@ -114,14 +110,6 @@ public class Usuario {
 
 	public void setPapeis(List<Papel> papeis) {
 		this.papeis = papeis;
-	}
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 
 	@Override
