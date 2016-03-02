@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14315320747980" configfile="/avocatus-web/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/cadUsuario.xhtml" x="122" y="178" id="pf143627613990011" referenceLink="//@navigationRule.16/@fromViewId|" path="/pages/usuario/cadUsuario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" x="122" y="562" id="pf143627618746719" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14501395179820" path="/pages/login/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/infoUsuario.xhtml" x="122" y="946" id="pf14441877923441" referenceLink="//@navigationRule.12/@navigationCase.2/@toViewId|" path="/pages/usuario/infoUsuario.xhtml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14315320747980" configfile="/saa-web/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/cadUsuario.xhtml" x="122" y="178" id="pf143627613990011" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14569606110700" path="/pages/usuario/cadUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/infoUsuario.xhtml" x="122" y="562" id="pf14441877923441" referenceLink="//@navigationRule.12/@navigationCase.2/@toViewId|" path="/pages/usuario/infoUsuario.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/cadCampanha.xhtml" x="122" y="1330" id="pf14445794821124" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" path="/pages/instituicao/cadCampanha.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/excInstituicao.xhtml" x="122" y="1714" id="pf14445829204485" referenceLink="//@navigationRule.6/@fromViewId|" path="/pages/instituicao/excInstituicao.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/infoInstituicao.xhtml" x="122" y="2098" id="pf14445829204487" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/pages/usuario/infoUsuario.xhtml"/>
@@ -15,18 +14,23 @@
   <nodes xsi:type="pageflow:PFPage" name="pages/usuario/atualizaUsuario.xhtml" x="122" y="4786" id="pf144470207479415" referenceLink="//@navigationRule.17/@fromViewId|" path="/pages/usuario/atualizaUsuario.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/listCampanhas.xhtml" x="122" y="5170" id="pf14447476954092" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" path="/pages/instituicao/listCampanhas.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/doador/infoCampanha.xhtml.xhtml" x="122" y="5554" id="pf14453722281399" referenceLink="//@navigationRule.10/@fromViewId|" path="/pages/doador/infoCampanha.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/listDoacPorCamp.xhtml" x="122" y="6322" id="pf14460668340219" referenceLink="//@navigationRule.5/@fromViewId|" path="/pages/instituicao/listDoacPorCamp.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/listDoacPorCamp.xhtml" x="122" y="5938" id="pf14460668340219" referenceLink="//@navigationRule.5/@fromViewId|" path="/pages/instituicao/listDoacPorCamp.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/infoSobreDoacao.xhtml" x="122" y="6706" id="pf14472705244194" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" path="/pages/instituicao/infoSobreDoacao.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/instituicao/atualizarInstituicao.xhtml" x="122" y="7090" id="pf14478021657685" referenceLink="//@navigationRule.13/@navigationCase.4/@toViewId|" path="/pages/instituicao/atualizarInstituicao.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/doador/atualizarInstituicao.xhtml" x="122" y="7474" id="pf14478739411346" referenceLink="//@navigationRule.13/@navigationCase.5/@toViewId|" path="/pages/doador/atualizarDoador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/doador/excDoador.xhtml" x="122" y="7858" id="pf14480593257241" referenceLink="//@navigationRule.11/@fromViewId|" path="/pages/doador/excDoador.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="5938" id="pf14486359029336" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14501395179821 pf14501395179822 pf14501395179823 pf14501395179824" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="6322" id="pf14486359029336" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14501395179821 pf14501395179822 pf14501395179823 pf14501395179824 pf14569606110711" path="*"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/doador/minDoacao.xhtml" x="122" y="8242" id="pf14486359029338" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" path="/pages/doador/minDoacao.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/home/dashboardAtendente.xhtml" x="338" y="562" id="pf14501395179825" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14501395179820" path="/pages/home/dashboardAtendente.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.jsf" x="338" y="5938" id="pf14501395179826" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf14501395179821 pf14501395179822 pf14501395179823 pf14501395179824" path="/pages/login/login.jsf"/>
-  <links id="pf14501395179820" target="pf14501395179825" source="pf143627618746719" outcome="homeAtendente"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.jsf" x="338" y="6322" id="pf14501395179826" referenceLink="//@navigationRule.1/@navigationCase.4/@toViewId|" inlinks="pf14501395179821 pf14501395179822 pf14501395179823 pf14501395179824 pf14569606110711" path="/pages/login/login.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" id="pf14569606110712" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14569606110713 pf14569606110714 pf14569606110715 pf14569606110700" inlinks="pf14569606110715" path="/pages/login/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home/dashboardAtendente.xhtml" id="pf14569606110716" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14569606110713 pf14569606110714" path="/pages/home/dashboardAtendente.xhtml"/>
   <links id="pf14501395179821" target="pf14501395179826" source="pf14486359029336" outcome="atendimento"/>
   <links id="pf14501395179822" target="pf14501395179826" source="pf14486359029336" outcome="acompanhamento"/>
   <links id="pf14501395179823" target="pf14501395179826" source="pf14486359029336" outcome="agenda"/>
   <links id="pf14501395179824" target="pf14501395179826" source="pf14486359029336" outcome="funcionarios"/>
+  <links id="pf14569606110711" target="pf14501395179826" source="pf14486359029336" outcome="sair"/>
+  <links id="pf14569606110713" target="pf14569606110716" source="pf14569606110712" outcome="homeProfessor"/>
+  <links id="pf14569606110714" target="pf14569606110716" source="pf14569606110712" outcome="homeAdministrador"/>
+  <links id="pf14569606110715" target="pf14569606110712" source="pf14569606110712" outcome="fracasso"/>
+  <links id="pf14569606110700" target="pf143627613990011" source="pf14569606110712" outcome="cadastro"/>
 </pageflow:Pageflow>

@@ -6,6 +6,10 @@
 	<navigation-rule>
 		<from-view-id>/pages/login/login.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>cadastro</from-outcome>
+			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>homeProfessor</from-outcome>
 			<to-view-id>/pages/home/dashboardAtendente.xhtml</to-view-id>
 		</navigation-case>

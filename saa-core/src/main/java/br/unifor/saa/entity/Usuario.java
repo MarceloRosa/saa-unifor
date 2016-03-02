@@ -31,6 +31,9 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(nullable=false)
+	private String nome;
 
 	@Column(unique = true, nullable = false)
 	@Email(message="email informado está fora do padrão")

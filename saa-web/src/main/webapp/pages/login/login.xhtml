@@ -30,7 +30,7 @@
 
 				<div class="footer">
 					<h:commandButton id="login" value="#{messages['login.bt_entrar']}" class="button" action="#{loginManager.loggar()}" />
-					<h:commandButton id="register" value="#{messages['login.lk_register']}" class="register" />
+					<h:commandButton id="register" value="#{messages['login.lk_register']}" class="register" action="#{cadUsuarioManager.preparaCadastro}"/>
 				</div>
 
 			</h:form>
