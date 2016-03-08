@@ -114,6 +114,13 @@ public class Usuario {
 	public void setPapeis(List<Papel> papeis) {
 		this.papeis = papeis;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	@Override
 	public int hashCode() {

@@ -16,7 +16,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.unifor.saa.entity.Papel;
 import br.unifor.saa.entity.Usuario;
+import br.unifor.saa.entity.enums.TipoPapel;
 
 /**
  * @author adrianopatrick@gmail.com
@@ -69,6 +71,13 @@ public class UsuarioDAO {
 		} catch (NoResultException e) {
 			return null;
 		}
+	}
+
+	public Papel buscarPapelPorTipoPapel(TipoPapel tipoPapel) {
+		String jpql = "select p from Papel p where p.tipoPapel = :tipoPapel";
+		Query query = em.createQuery(jpql);
+		query.setParameter("tipoPapel", tipoPapel);
+		return (Papel) query.getSingleResult();
 	}
 
 }

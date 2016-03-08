@@ -30,9 +30,17 @@
 		<cglib.version>3.1</cglib.version>
 		<persistence.version>1.0.2</persistence.version>
 		<prime.version>5.1</prime.version>
+		<java.mail>1.5.0-b01</java.mail>
 	</properties>
 
 	<dependencies>
+
+		<!-- Java Main -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${java.mail}</version>
+		</dependency>
 
 		<!-- Bean Validation Dependencies -->
 		<dependency>

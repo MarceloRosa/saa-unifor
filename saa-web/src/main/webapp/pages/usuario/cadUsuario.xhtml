@@ -15,9 +15,9 @@
 			<h:panelGrid id="gridUser" columns="3">
 			
 				<p:outputLabel id="labelTipo" value="#{messages['cadUsuario.tipo']}" for="tipo"/>
-				<p:selectOneMenu id="tipo" value="#{cadUsuarioManager.papel}" required="true" requiredMessage="#{messages['msg.required']}">
-					<f:selectItem itemLabel="Professor" itemValue="#{TipoPapel.PROFESSOR}" />
-					<f:selectItem itemLabel="Aluno" itemValue="#{'TipoPapel.ALUNO'}" />
+				<p:selectOneMenu id="tipo" value="#{cadUsuarioManager.tipoPapel}" required="true" requiredMessage="#{messages['msg.required']}">
+					<f:selectItem itemLabel="Professor" itemValue="#{'PROFESSOR'}" />
+					<f:selectItem itemLabel="Aluno" itemValue="#{'ALUNO'}" />
 				</p:selectOneMenu>
 				<p:message for="tipo" />
 			
@@ -31,8 +31,8 @@
 			</h:panelGrid>
 			
 			<h:panelGrid id="gridButtons" columns="2">
-				<p:commandButton value="#{messages['cadUsuario.bt_salvar']}" />
-				<p:commandButton value="#{messages['cadUsuario.bt_voltar']}" />
+				<h:commandButton value="#{messages['cadUsuario.bt_salvar']}" action="#{cadUsuarioManager.salvar}" ajax="false" />
+				<h:commandButton value="#{messages['cadUsuario.bt_voltar']}" />
 			</h:panelGrid>
 
 
