@@ -48,7 +48,7 @@ public class UsuarioBO {
 		this.usuarioDAO.salvar(usuario);
 	}
 
-	@RolesAllowed("ATUALIZAR_USUARIO")
+	@RolesAllowed("ATUALIZAR_SENHA")
 	public void atualizar(Usuario usuario) {
 		this.usuarioDAO.atualizar(usuario);
 	}

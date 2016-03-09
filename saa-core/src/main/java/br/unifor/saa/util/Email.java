@@ -42,7 +42,7 @@ public class Email {
 
 			message.setRecipients(Message.RecipientType.TO, toUser);
 			message.setSubject("Bem-vindo ao Saa-Web");// Assunto
-			message.setText("Utilize esta senha, "+senha+" para autenticar-se.");
+			message.setText("Utilize esta senha, <b>"+senha+"</b> para autenticar-se.");
 			/** Método para enviar a mensagem criada */
 			Transport.send(message);
 

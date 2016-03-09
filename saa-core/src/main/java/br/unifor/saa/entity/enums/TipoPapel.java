@@ -19,7 +19,7 @@ public enum TipoPapel {
 	
 	public static TipoPapel buscarPorDescricao(String descricao){
 		for (TipoPapel tipo : values()) {
-			if(tipo.getDescricao().equals(descricao)){
+			if(tipo.getDescricao().equalsIgnoreCase(descricao)){
 				return tipo;
 			}
 		}

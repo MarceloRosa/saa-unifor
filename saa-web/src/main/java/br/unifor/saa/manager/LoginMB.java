@@ -19,6 +19,7 @@ import br.unifor.saa.entity.Usuario;
 import br.unifor.saa.entity.enums.TipoPapel;
 import br.unifor.saa.exceptions.BOException;
 import br.unifor.saa.to.SegurancaTO;
+import br.unifor.saa.util.Encripta;
 import br.unifor.saa.util.MessagesResources;
 import br.unifor.saa.utils.MessagesUtils;
 import br.unifor.saa.utils.Navigation;
@@ -41,6 +42,7 @@ public class LoginMB {
 
 	private String email;
 	private String senha;
+	private String confirmaSenha;
 
 	@Inject
 	private UsuarioBO usuarioBO;
@@ -52,9 +54,9 @@ public class LoginMB {
 		try {
 			Usuario usuario = usuarioBO.loggar(this.email, this.senha);
 			
-			if (!usuario.isPrimeiroAcesso()) {
-				segurancaTO.setUsuario(usuario);
-				MessagesUtils.info(MessagesResources.getMessages("home.welcome"));
+			segurancaTO.setUsuario(usuario);
+			MessagesUtils.info(MessagesResources.getMessages("home.welcome"));
+			if (!usuario.isPrimeiroAcesso() && usuario.isAtivo()) {
 				return redirecionarPorPapel(usuario.maxPapel());
 			} else {
 				return Navigation.ATUALIZA;
@@ -64,6 +66,23 @@ public class LoginMB {
 			return Navigation.FRACASSO;
 		} 
 	}
+	
+	public String alteraSenha(){
+		
+		if(!senha.equals(confirmaSenha)){
+			MessagesUtils.error(MessagesResources.getMessages("msg.confirmasenha"));
+			return Navigation.FRACASSO;
+		}
+		
+		Usuario usuario = segurancaTO.getUsuario();
+		usuario.setSenha(Encripta.encripta(senha));
+		usuario.setPrimeiroAcesso(false);
+		usuario.setAtivo(true);
+		usuarioBO.atualizar(usuario);
+		
+		return redirecionarPorPapel(usuario.maxPapel());
+	}
+
 
 	public String redirecionarPorPapel(TipoPapel tipoPapel) {
 
@@ -78,6 +97,14 @@ public class LoginMB {
 		}
 	}
 
+	public String getConfirmaSenha() {
+		return confirmaSenha;
+	}
+	
+	public void setConfirmaSenha(String confirmaSenha) {
+		this.confirmaSenha = confirmaSenha;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

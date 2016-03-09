@@ -10,7 +10,15 @@
 			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>atualiza</from-outcome>
+			<to-view-id>/pages/usuario/atualizarUsuario.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>homeProfessor</from-outcome>
+			<to-view-id>/pages/home/dashboardAtendente.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>homeAluno</from-outcome>
 			<to-view-id>/pages/home/dashboardAtendente.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
@@ -23,6 +31,24 @@
 		</navigation-case>
 	</navigation-rule>
 	<!-- Login Fim -->
+	
+	<!-- atualizaSenha -->
+	<navigation-rule>
+		<from-view-id>/pages/usuario/atualizarUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>fracasso</from-outcome>
+			<to-view-id>/pages/usuario/atualizarUsuario.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>homeProfessor</from-outcome>
+			<to-view-id>/pages/home/dashboardAtendente.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>homeAluno</from-outcome>
+			<to-view-id>/pages/home/dashboardAtendente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- fim do atualizaSenha -->
 	
 	<!-- cadUsuario -->
 	<navigation-rule>
